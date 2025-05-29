@@ -1,3 +1,9 @@
+# Web map project - Openlayers
+
+This project was created to demonstrate skills of working with geographic data using JavaScript, HTML and CSS with Openlayers platform.
+
+
+
 # OpenLayers + Vite
 
 This example demonstrates how the `ol` package can be used with [Vite](https://vitejs.dev/).
