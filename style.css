@@ -1,0 +1,155 @@
+@import "node_modules/ol/ol.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* popup style */
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 280px;
+  max-width: 90vw;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: normal;
+}
+#popup-content {
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+.ol-popup-closer:after {
+  content: "✖";
+}
+
+/* legend */
+.map-legend {
+  position: absolute;
+  bottom: 35px;
+  left: 10px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 350px;
+  z-index: 1000;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.legend-item img {
+  max-width: 20px;
+  height: auto;
+}
+.legend-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* layers checklist hamburger menu  button */
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* hamburger animation for open */
+.hamburger.open #bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open #bar2 {
+  opacity: 0;
+}
+.hamburger.open #bar3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* side dropdown for layers checklist*/
+.toc-popup {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 220px;
+  display: none;
+}
+.toc-popup h2 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.toc-popup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}

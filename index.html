@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Using OpenLayers with Vite</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="module" src="./main.js"></script>
+
+    <!-- menu button for layers checklist -->
+    <button id="toc-toggle" class="hamburger">
+      <span id="bar1" class="bar"></span>
+      <span id="bar2" class="bar"></span>
+      <span id="bar3" class="bar"></span>
+    </button>
+
+    <!-- side popup for layers checklist -->
+    <div id="toc-popup" class="toc-popup">
+      <h2>Vrstvy mapových služieb</h2>
+      <label><input type="checkbox" id="toggle-flood" checked>Oblastí povodňového ohrozenia str. pravdepodobnosti</label>
+      <label><input type="checkbox" id="toggle-road" checked>Cestná dopravná sieť SR</label>
+      <label><input type="checkbox" id="toggle-geoJson" checked>Starý Zámok a Nový Zámok v BS - geoJSON vrstva</label>
+      <label><input type="checkbox" id="toggle-square" checked>Námestie sv. trojice statický bod</label>
+      <label><input type="checkbox" id="toggle-polygon" checked>Nástroj na kreslenie polygónov</label>
+    </div>
+
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+    <div id="legend" class="map-legend">
+        <h2>Legenda mapy</h2>
+        <div class="legend-item">
+          <img src="https://mpt.svp.sk/server/services/inspire/INSPIRE_MPO/MapServer/WMSServer?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=0" alt="Legenda oblasti povodnoveho ohrozenia str. pravdepodobnosti">
+          <p>Oblasti povodňového ohrozenia str. pravdepodobnosti</p>
+        </div>
+        <div class="legend-item">
+          <img src="https://ismcs.cdb.sk/inspire/services/INSPIRE/InspireView/MapServer/WMSServer?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=TN.RoadTransportNetwork.RoadLink" alt="Legenda cestnej dopravnej siete SR">
+          <p>Cestná dopravná sieť SR</p>
+        </div>
+        <div class="legend-item">
+          <img src="https://openlayers.org/en/latest/examples/data/icon.png" alt="Zámky a námestie">
+          <p>Starý Zámok, Nový Zámok, Námestie sv. Trojice</p>
+        </div>
+    </div>
+  </body>
+</html>
